@@ -107,7 +107,6 @@
           </a> -->
         </div>
       </details>
-
     </div>
   </nav>
 
@@ -163,62 +162,6 @@
         userManagementDetails();
 
         $(".permission").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/assignuserpermission.html")) {
-        sectionDetails("perm-details");
-        userManagementDetails();
-
-        $(".assignpermission").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/userspermissions.html")) {
-        sectionDetails("perm-details");
-        userManagementDetails();
-
-        $(".userspermissions").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/groups.html")) {
-        sectionDetails("group-details");
-        userManagementDetails();
-
-        $(".groups").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/groupusers.html")) {
-        sectionDetails("group-details");
-        userManagementDetails();
-
-        $(".usergroups").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/registration.html")) {
-        sectionDetails("registration-toggle");
-        // userManagementDetails();
-
-        $(".registration").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/alllogs.html")) {
-        sectionDetails("logs-details");
-        userManagementDetails();
-
-        $(".all-logs").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/assigngrouppermission.html")) {
-        sectionDetails("group-details");
-        userManagementDetails();
-
-        $(".assignGroupPermission").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("pages/earlyregistration.html")) {
-        sectionDetails("reg-details");
-        sectionDetails("registration-toggle");
-
-        $(".earlyRegistration").addClass("bg-crvsblue-900");
-      } else if (
-        pageURL.includes("pages/earlybirthform.html") ||
-        pageURL.includes("pages/earlybirthregistration.html")
-      ) {
-        sectionDetails("reg-details");
-        sectionDetails("registration-toggle");
-
-        $(".earlyRegistration").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/death-registration.html")) {
-        sectionDetails("death-toggle");
-
-        $(".deathRegistration").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/death-assessment.html")) {
-        sectionDetails("death-toggle");
-
-        $(".deathAssessment").addClass("bg-crvsblue-900");
       } else if (pageURL.includes("/pages/marriage.html")) {
         sectionDetails("marriage-toggle");
 
@@ -227,14 +170,6 @@
         sectionDetails("marriage-toggle");
 
         $(".marriageAssessment").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/marriageregistar.html")) {
-        sectionDetails("marriageRegistar-toggle");
-
-        $(".marriageRegistar").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/booksmanagement.html")) {
-        sectionDetails("marriageRegistar-toggle");
-
-        $(".marriageBooks").addClass("bg-crvsblue-900");
       }
     });
   </script>
