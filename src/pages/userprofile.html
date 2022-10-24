@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- tailwindcss elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+
+    <link href="../dist/tailwindcss.css" rel="stylesheet" />
+    <title>User Profile</title>
+    <link rel="icon" type="image/x-icon" href="../images/crvs-image.png" />
+  </head>
+  <body>
+    <div class="min-h-full">
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div
+        id="sidebar"
+        class="fixed inset-0 z-40 flex hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-600 bg-opacity-75"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="relative flex w-full max-w-xs flex-1 flex-col bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button
+              id="close_sidebar"
+              type="button"
+              class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- <div class="flex-shrink-0 flex items-center px-4"></div> -->
+
+          <!--nav bar place-->
+          <section include="navigation.html"></section>
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+
+        <div
+          class="flex flex-grow flex-col overflow-y-auto bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div
+            class="flex w-full flex-shrink-0 flex-row items-center justify-center space-x-3 px-4"
+          >
+            <image src="../images/crvs-image.png" class="h-10 w-16" />
+            <h class="text-2xl font-bold tracking-widest text-white">CRVS</h>
+          </div>
+
+          <!-- navigation section -->
+          <section include="navigation.html"></section>
+        </div>
+      </div>
+
+      <div class="flex flex-1 flex-col lg:pl-64">
+        <main class="relative min-h-screen flex-1 pb-8">
+          <!-- Page header -->
+          <section include="header.html"></section>
+
+          <!-- Main page -->
+          <div class="px-6 py-2">
+            <div
+              class="flex w-full flex-row items-center border-b-2 border-black py-2 px-2"
+            >
+              <div class="flex w-full flex-row items-center space-x-2">
+                <span class="rounded-full bg-crvsicon-100 px-3 py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+
+                <h class="w-48 text-xl font-semibold uppercase">user profile</h>
+
+                <div class="flex h-12 w-full justify-end space-x-2">
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#editPassword"
+                    class="rounded border border-crvsgreen-900 bg-transparent py-2 px-4 font-semibold uppercase text-crvsgreen-700 hover:border-transparent hover:bg-crvsgreen-900 hover:text-white"
+                  >
+                    change password
+                  </button>
+
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#editProfile"
+                    class="rounded border border-crvsgreen-900 bg-transparent py-2 px-4 font-semibold uppercase text-crvsgreen-700 hover:border-transparent hover:bg-crvsgreen-900 hover:text-white"
+                  >
+                    edit profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center">
+              <div
+                class="mt-12 flex h-96 w-[80%] flex-col bg-slate-100 px-12 py-12 rounded-md"
+              >
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">First Name:</label>
+                  </div>
+
+                  <input
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">Middle Name:</label>
+                  </div>
+
+                  <input
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">Last Name:</label>
+                  </div>
+
+                  <input
+
+                  type="text"
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">Email:</label>
+                  </div>
+
+                  <input
+
+                  type="text"
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">Phone Number:</label>
+                  </div>
+
+                  <input
+
+                  type="text"
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                <div class="flex w-full flex-row items-center justify-center">
+                  <div class="flex h-12 w-48 items-center justify-end px-4">
+                    <label class="uppercase font-medium">Zan id no:</label>
+                  </div>
+
+                  <input
+
+                  type="text"
+                    class="h-10 w-1/2 rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  />
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+          <section include="footer.html"></section>
+        </main>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="../js/buttonControls.js"
+      type="text/javascript"
+      charset="utf8"
+    ></script>
+
+    <script src="../js/section.js"></script>
+
+    <!-- DevExtreme theme -->
+
+    <!-- toast message cdns -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+
+    <!-- Edit profile -->
+    <div
+      class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+      id="editProfile"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl pointer-events-none relative w-auto">
+        <div
+          class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+        >
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+          >
+            <h5
+              class="text-xl font-medium uppercase leading-normal text-gray-800"
+              id="exampleModalLabel"
+            >
+              edit profile
+            </h5>
+          </div>
+          <div class="modal-body relative p-4">
+            <form>
+              <div class="grid grid-cols-2 gap-2 py-4 px-6">
+                <div class="flex flex-col">
+                  <label class="font-medium uppercase">first name:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="First Name"
+                    type="text"
+                  />
+                </div>
+
+                <div class="flex flex-col">
+                  <label class="font-medium uppercase">middle name:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Middle Name"
+                    type="text"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">last name:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Last Name"
+                    type="text"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">email:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Email"
+                    type="email"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">zan id number:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Zan ID No"
+                    type="number"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">phone number:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Zan ID No"
+                    type="number"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end space-x-3 rounded-b-md border-t border-gray-200 p-4 px-4"
+          >
+            <button
+              type="button"
+              class="rounded-md bg-crvsgreen-300 px-5 py-2.5 text-sm font-medium text-crvsgreen-900 hover:bg-crvsgreen-800 hover:text-white"
+            >
+              Update
+            </button>
+
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="rounded-md bg-red-300 px-5 py-2.5 text-sm font-medium text-red-900 hover:bg-red-800 hover:text-white"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- change password -->
+    <div
+      class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+      id="editPassword"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg pointer-events-none relative w-auto">
+        <div
+          class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+        >
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+          >
+            <h5
+              class="text-xl font-medium uppercase leading-normal text-gray-800"
+              id="exampleModalLabel"
+            >
+              Change password
+            </h5>
+          </div>
+          <div class="modal-body relative p-4">
+            <form>
+              <div class="grid gap-2 py-4 px-6">
+                <div class="flex flex-col">
+                  <label class="font-medium uppercase">user name:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="First Name"
+                    type="text"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">Old Password:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Old Password"
+                    type="password"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">New password:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="New Password"
+                    type="password"
+                  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">confrim password:</label>
+                  <input
+                    class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                    placeholder="Confrim Password"
+                    type="password"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end space-x-3 rounded-b-md border-t border-gray-200 p-4 px-4"
+          >
+            <button
+              type="button"
+              class="rounded-md bg-crvsgreen-300 px-5 py-2.5 text-sm font-medium text-crvsgreen-900 hover:bg-crvsgreen-800 hover:text-white"
+            >
+              Update
+            </button>
+
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="rounded-md bg-red-300 px-5 py-2.5 text-sm font-medium text-red-900 hover:bg-red-800 hover:text-white"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal-tailwindcss cnd script -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  </body>
+</html>
