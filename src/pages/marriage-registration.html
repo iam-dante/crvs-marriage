@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+
+    <!-- tailwindcss elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+
+    <link href="../dist/tailwindcss.css" rel="stylesheet" />
+    <title>Registration</title>
+    <link rel="icon" type="image/x-icon" href="../images/crvs-image.png" />
+  </head>
+  <body>
+    <div class="min-h-full">
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div
+        id="sidebar"
+        class="fixed inset-0 z-40 flex hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-600 bg-opacity-75"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="relative flex w-full max-w-xs flex-1 flex-col bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button
+              id="close_sidebar"
+              type="button"
+              class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- <div class="flex-shrink-0 flex items-center px-4"></div> -->
+
+          <!--nav bar place-->
+          <section include="navigation.html"></section>
+        </div>
+
+        <div class="w-14 flex-shrink-0" aria-hidden="true">
+          <!-- Dummy element to force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+
+        <div
+          class="flex flex-grow flex-col overflow-y-auto bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div
+            class="flex w-full flex-shrink-0 flex-row items-center justify-center space-x-3 px-4"
+          >
+            <image src="../images/crvs-image.png" class="h-10 w-16" />
+            <h class="text-2xl font-bold tracking-widest text-white">CRVS</h>
+          </div>
+
+          <!-- navigation section -->
+          <section include="navigation.html"></section>
+        </div>
+      </div>
+
+      <div class="flex flex-1 flex-col lg:pl-64">
+        <main id="mainpage" class="relative min-h-screen flex-1 pb-24">
+          <!-- Page header -->
+          <section include="header.html"></section>
+
+          <!-- main section -->
+          <div class="mx-2 mt-4 h-auto py-4 px-12">
+            <ul class="stepper heightstepper" data-mdb-stepper="stepper">
+              <!-- decedent infromation -->
+              <li id="groomId" class="stepper-step">
+                <button class="stepper-head w-full" disabled>
+                  <span class="stepper-head-icon"> 1 </span>
+                  <span class="stepper-head-text text-xl uppercase text-black">
+                    Groom details
+                  </span>
+                </button>
+
+                <div id="groomDiv" class="stepper-content space-y-8">
+                  <div class="space-y-4">
+                    <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                      <h class="text-xl font-semibold uppercase"
+                        >Groom information</h
+                      >
+                    </div>
+
+                    <form class="space-y-8">
+                      <div
+                        class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                      >
+                        <label class="block w-full">
+                          <span class="block text-base font-light"
+                            >Groom ID Type:</span
+                          >
+                          <select
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          >
+                            <option>Select type of ID</option>
+                          </select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            ID Number</span
+                          >
+
+                          <input
+                            type="number"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Id number"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            Book Number</span
+                          >
+
+                          <input
+                            type="number"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Book Number"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            First Name</span
+                          >
+
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="First Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kati /</span> -->
+                            Middle Name</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Middle Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Surname</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="SurName"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Date of birth</span
+                          >
+                          <input
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Date of marriage</span
+                          >
+                          <input
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Marital status</span
+                          >
+                          <select
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          ></select>
+                        </label>
+                      </div>
+
+                      <!-- Place of usual democile -->
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            Place of usual democile</h
+                          >
+                        </div>
+
+                        <label class="flex w-full space-x-4 pl-6">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            Is address in zanzibar</span
+                          >
+
+                          <input
+                            type="checkbox"
+                            class="mt-1 rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="First Name"
+                          />
+                        </label>
+
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              District of democile</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Shehia/Ward</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Enumeration area</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Duration of residence in usual place
+                            </span>
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Migrant Status</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Address</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Address"
+                            />
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- Place of birth -->
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            Place of birth</h
+                          >
+                        </div>
+
+                        <label class="flex w-full space-x-4 pl-6">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            Is address in zanzibar</span
+                          >
+
+                          <input
+                            type="checkbox"
+                            class="mt-1 rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                          />
+                        </label>
+
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              District of birth</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Ward of birth</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Enumeration area</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option></option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Address</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Address"
+                            />
+                          </label>
+                        </div>
+                      </div>
+
+                      <!--Additional information -->
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            Additional information</h
+                          >
+                        </div>
+
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Educational attainment</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="flex w-full flex-col justify-center">
+                            <span
+                              class="block text-center text-base font-medium"
+                              >Completed</span
+                            >
+                            <div class="mt-3 flex flex-row space-x-6">
+                              <div class="flex w-full flex-col items-center">
+                                <input type="checkbox" class="h-4 w-4" />
+                              </div>
+                            </div>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Literacy Status</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Ethnic and/or national group</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Citizenship/nationality</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Economic activity status</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Socio-economic status</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Usual occupation(Level 1)</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Usual occupation(Level 2)</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Usual occupation(Level 2)</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-medium"
+                              >Usual occupation(Free text)</span
+                            >
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- Other characteristics of the groom -->
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            Other characteristics of the groom</h
+                          >
+                        </div>
+
+                        <div class="grid gap-8 px-6 md:grid-cols-3">
+                          <label class="flex w-full flex-col justify-center">
+                            <span
+                              class="block text-center text-base font-medium"
+                              >Previous marriage</span
+                            >
+                            <div class="mt-3 flex flex-row space-x-6">
+                              <div class="flex w-full flex-col items-center">
+                                <input type="checkbox" class="h-4 w-4" />
+                              </div>
+                            </div>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              Marriage Order</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Legitimacy status"
+                            />
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- actions -->
+                      <div class="flex h-20 w-full justify-end">
+                        <button
+                          type="button"
+                          id="brideNext"
+                          class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                        >
+                          <h class="font-bold">next</h>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </li>
+
+              <!-- bride infromation -->
+              <li id="brideId" class="stepper-step">
+                <button class="stepper-head w-full" disabled>
+                  <span class="stepper-head-icon"> 2 </span>
+                  <span class="stepper-head-text text-xl uppercase">
+                    bride details</span
+                  >
+                </button>
+                <div id="brideDiv" class="stepper-content space-y-8">
+                  <form class="space-y-8">
+                    <div class="space-y-4">
+                      <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                        <h class="text-xl font-semibold uppercase"
+                          >Bride information</h
+                        >
+                      </div>
+
+                      <form class="space-y-8">
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                          <label class="block w-full">
+                            <span class="block text-base font-light"
+                              >Bride ID Type:</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option>Select type of ID</option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              ID Number</span
+                            >
+
+                            <input
+                              type="number"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Id number"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              First Name</span
+                            >
+
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="First Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kati /</span> -->
+                              Middle Name</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Middle Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Surname</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="SurName"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Date of birth</span
+                            >
+                            <input
+                              type="date"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Date of marriage</span
+                            >
+                            <input
+                              type="date"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Marital status</span
+                            >
+                            <select
+                              type="date"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            ></select>
+                          </label>
+                        </div>
+
+                        <!-- Place of usual democile -->
+                        <div class="space-y-4">
+                          <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                            <h class="text-xl font-semibold uppercase">
+                              Place of usual democile</h
+                            >
+                          </div>
+
+                          <label class="flex w-full space-x-4 pl-6">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              Is address in zanzibar</span
+                            >
+
+                            <input
+                              type="checkbox"
+                              class="mt-1 rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="First Name"
+                            />
+                          </label>
+
+                          <div
+                            class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                          >
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                District of democile</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Shehia/Ward</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Enumeration area</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Duration of residence in usual place
+                              </span>
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Migrant Status</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Address</span
+                              >
+                              <input
+                                type="text"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                                placeholder="Address"
+                              />
+                            </label>
+                          </div>
+                        </div>
+
+                        <!-- Place of birth -->
+                        <div class="space-y-4">
+                          <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                            <h class="text-xl font-semibold uppercase">
+                              Place of birth</h
+                            >
+                          </div>
+
+                          <label class="flex w-full space-x-4 pl-6">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              Is address in zanzibar</span
+                            >
+
+                            <input
+                              type="checkbox"
+                              class="mt-1 rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            />
+                          </label>
+
+                          <div
+                            class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                          >
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                District of birth</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Ward of birth</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Enumeration area</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              >
+                                <option></option>
+                              </select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Address</span
+                              >
+                              <input
+                                type="text"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                                placeholder="Address"
+                              />
+                            </label>
+                          </div>
+                        </div>
+
+                        <!--Additional information -->
+                        <div class="space-y-4">
+                          <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                            <h class="text-xl font-semibold uppercase">
+                              Additional information</h
+                            >
+                          </div>
+
+                          <div
+                            class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                          >
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Educational attainment</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="flex w-full flex-col justify-center">
+                              <span
+                                class="block text-center text-base font-medium"
+                                >Completed</span
+                              >
+                              <div class="mt-3 flex flex-row space-x-6">
+                                <div class="flex w-full flex-col items-center">
+                                  <input type="checkbox" class="h-4 w-4" />
+                                </div>
+                              </div>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Literacy Status</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Ethnic and/or national group</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Citizenship/nationality</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Economic activity status</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Socio-economic status</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Usual occupation(Level 1)</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Usual occupation(Level 2)</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Usual occupation(Level 2)</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Usual occupation(Free text)</span
+                              >
+                            </label>
+                          </div>
+                        </div>
+
+                        <!-- Other characteristics of the groom -->
+                        <div class="space-y-4">
+                          <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                            <h class="text-xl font-semibold uppercase">
+                              Other characteristics of the groom</h
+                            >
+                          </div>
+
+                          <div class="grid gap-8 px-6 md:grid-cols-3">
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Under age of puberty</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-medium"
+                                >Prevously Marriage ?</span
+                              >
+                              <select
+                                class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                              ></select>
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Date of Edda completion</span
+                              >
+                              <input
+                                type="date"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              />
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Dowry Paid</span
+                              >
+                              <input
+                                type="number"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                                placeholder="Dowry Paid"
+                              />
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Dowry Differed</span
+                              >
+                              <input
+                                type="number"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                                placeholder="Dowry Differed"
+                              />
+                            </label>
+
+                            <label class="block w-full">
+                              <span class="block text-base font-light">
+                                Marriage Order</span
+                              >
+                              <input
+                                type="text"
+                                class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                                placeholder="Legitimacy status"
+                              />
+                            </label>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="flex h-20 w-full justify-between">
+                      <button
+                        type="button"
+                        id="prevGroom"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <h class="font-bold">prev</h>
+                      </button>
+
+                      <button
+                        type="button"
+                        id="regNext"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <h class="font-bold">next</h>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- registrar  infromation -->
+              <li id="regId" class="stepper-step">
+                <button class="stepper-head w-full" disabled>
+                  <span class="stepper-head-icon"> 3 </span>
+                  <span class="stepper-head-text text-xl uppercase"
+                    >registrar details</span
+                  >
+                </button>
+                <div id="regDiv" class="stepper-content space-y-8">
+                  <form class="space-y-8">
+                    <div class="space-y-4">
+                      <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                        <h class="text-xl font-semibold uppercase"
+                          >registrar information</h
+                        >
+                      </div>
+
+                      <div
+                        class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                      >
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            Registrar ID type:</span
+                          >
+                          <select
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          ></select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            ID Number</span
+                          >
+
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="ID Number"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            First Name</span
+                          >
+
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="First Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kati /</span> -->
+                            Middle Name</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Middle Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            SurName</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="SurName"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            District of democile</span
+                          >
+                          <select
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          ></select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium"> Jinsia /</span> -->
+                            Gender</span
+                          >
+
+                          <div class="mt-3 flex flex-row space-x-6">
+                            <div class="flex flex-col items-center">
+                              <input type="radio" class="h-4 w-4" />
+                              <span class="block text-base font-light">
+                                <!-- <span class="font-medium">Mume /</span> -->
+                                Male</span
+                              >
+                            </div>
+
+                            <div class="flex flex-col items-center">
+                              <input type="radio" class="h-4 w-4" />
+                              <span class="block text-base font-light">
+                                <!-- <span class="font-medium">Mke /</span> -->
+                                Female</span
+                              >
+                            </div>
+                          </div>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Ward of democile</span
+                          >
+                          <select
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          ></select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            Address:</span
+                          >
+
+                          <input
+                            type="number"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Phone Number"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            The title of registrar/Rank:</span
+                          >
+                          <select
+                            type="date"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          ></select>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="flex h-20 w-full justify-between">
+                      <button
+                        type="button"
+                        id="prevBride"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <h class="font-bold">prev</h>
+                      </button>
+
+                      <button
+                        type="button"
+                        id="witNext"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <h class="font-bold">next</h>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- witnessinfromation -->
+              <li id="witId" class="stepper-step">
+                <button class="stepper-head w-full" disabled>
+                  <span class="stepper-head-icon"> 4 </span>
+                  <span class="stepper-head-text text-xl uppercase"
+                    >witnesses details</span
+                  >
+                </button>
+                <div id="witDiv" class="stepper-content space-y-8">
+                  <form class="space-y-8">
+                    <div class="space-y-4">
+                      <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                        <h class="text-xl font-semibold uppercase"
+                          >witness information</h
+                        >
+                      </div>
+
+                      <div
+                        class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                      >
+                        <label class="block w-full">
+                          <span class="block text-base font-light"
+                            >ID Type:</span
+                          >
+                          <select
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          >
+                            <option>Select type of ID</option>
+                          </select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            ID Number</span
+                          >
+
+                          <input
+                            type="number"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Id number"
+                          />
+                        </label>
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            First Name</span
+                          >
+
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="First Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kati /</span> -->
+                            Middle Name</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Middle Name"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            SurName</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="SurName"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                            Signature</span
+                          >
+                          <input
+                            type="text"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Signature"
+                          />
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light">
+                            <!-- <span class="font-medium"> Jinsia /</span> -->
+                            Gender</span
+                          >
+
+                          <div class="mt-3 flex flex-row space-x-6">
+                            <div class="flex flex-col items-center">
+                              <input type="radio" class="h-4 w-4" />
+                              <span class="block text-base font-light">
+                                <!-- <span class="font-medium">Mume /</span> -->
+                                Male</span
+                              >
+                            </div>
+
+                            <div class="flex flex-col items-center">
+                              <input type="radio" class="h-4 w-4" />
+                              <span class="block text-base font-light">
+                                <!-- <span class="font-medium">Mke /</span> -->
+                                Female</span
+                              >
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            another witness</h
+                          >
+                        </div>
+
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+                          <label class="block w-full">
+                            <span class="block text-base font-light"
+                              >ID Type:</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option>Select type of ID</option>
+                            </select>
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              ID Number</span
+                            >
+
+                            <input
+                              type="number"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Id number"
+                            />
+                          </label>
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              First Name</span
+                            >
+
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="First Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kati /</span> -->
+                              Middle Name</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Middle Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              SurName</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="SurName"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Signature</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Signature"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium"> Jinsia /</span> -->
+                              Gender</span
+                            >
+
+                            <div class="mt-3 flex flex-row space-x-6">
+                              <div class="flex flex-col items-center">
+                                <input type="radio" class="h-4 w-4" />
+                                <span class="block text-base font-light">
+                                  <!-- <span class="font-medium">Mume /</span> -->
+                                  Male</span
+                                >
+                              </div>
+
+                              <div class="flex flex-col items-center">
+                                <input type="radio" class="h-4 w-4" />
+                                <span class="block text-base font-light">
+                                  <!-- <span class="font-medium">Mke /</span> -->
+                                  Female</span
+                                >
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="space-y-4">
+                        <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                          <h class="text-xl font-semibold uppercase">
+                            wife gurdian/ a person has authority to marry</h
+                          >
+                        </div>
+
+                        <div
+                          class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
+                        >
+
+                        <label class="block w-full">
+                          <span class="block text-base font-light"
+                            >ID Type:</span
+                          >
+                          <select
+                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                          >
+                            <option>Select type of ID</option>
+                          </select>
+                        </label>
+
+                        <label class="block w-full">
+                          <span class="  block text-base font-light">
+                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                            ID Number</span
+                          >
+
+                          <input
+                            type="number"
+                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                            placeholder="Id number"
+                          />
+                        </label>
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              First Name</span
+                            >
+
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="First Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kati /</span> -->
+                              Middle Name</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Middle Name"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              SurName</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="SurName"
+                            />
+                          </label>
+
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la Ukoo /</span> -->
+                              Signature</span
+                            >
+                            <input
+                              type="text"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Signature"
+                            />
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex h-20 w-full justify-between">
+                      <button
+                        type="button"
+                        id="prevReg"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <h class="font-bold">prev</h>
+                      </button>
+
+                      <button
+                        type="button"
+                        id="attdecNext"
+                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
+                      >
+                        <h class="font-bold">sumbit</h>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="h-6 w-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <section include="footer.html"></section>
+        </main>
+      </div>
+    </div>
+
+    <!-- FileView  -->
+    <div
+      class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+      id="fileView"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-xl pointer-events-none relative w-auto">
+        <div
+          class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+        >
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+          >
+            <h5
+              class="text-xl font-medium uppercase leading-normal text-gray-800"
+            >
+              Someone_Document.pdf
+            </h5>
+          </div>
+          <div class="modal-body relative h-[800px] p-4">
+            <iframe
+              id="fileview"
+              frameborder="0"
+              scrolling="auto"
+              height="100%"
+              width="100%"
+              class=""
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- DevExtreme library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/22.1.3/js/dx.all.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+    ></script>
+
+    <script src="../js/section.js"></script>
+
+    <!-- modal-tailwindcss cnd script -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn3.devexpress.com/jslib/21.2.7/css/dx.light.css"
+    />
+  </body>
+
+  <script>
+    const data = [
+      {
+        ID: 1,
+        FirstName: "someone john",
+        MiddleName: "name",
+        LastName: "Someoone",
+        PhoneNumber: "071809908",
+        Email: "someoneelse@gmail.com",
+      },
+      {
+        ID: 1,
+        FirstName: "someone john",
+        MiddleName: "name",
+        LastName: "Someoone",
+        PhoneNumber: "071809908",
+        Email: "someoneelse@gmail.com",
+      },
+      {
+        ID: 1,
+        FirstName: "someone john",
+        MiddleName: "name",
+        LastName: "Someoone",
+        PhoneNumber: "071809908",
+        Email: "someoneelse@gmail.com",
+      },
+      {
+        ID: 1,
+        FirstName: "someone john",
+        MiddleName: "name",
+        LastName: "Someoone",
+        PhoneNumber: "071809908",
+        Email: "someoneelse@gmail.com",
+      },
+      {
+        ID: 1,
+        FirstName: "someone john",
+        MiddleName: "name",
+        LastName: "Someoone",
+        PhoneNumber: "071809908",
+        Email: "someoneelse@gmail.com",
+      },
+
+      {
+        ID: 3,
+        FirstName: "Kanye",
+        MiddleName: "West",
+        LastName: "Someoone",
+        PhoneNumber: "04891180008",
+        Email: "kanyelse@gmail.com",
+      },
+      {
+        ID: 4,
+        FirstName: "Jay",
+        MiddleName: "Name",
+        LastName: "Someoone",
+        PhoneNumber: "079837783",
+        Email: "JohnDoelse@gmail.com",
+      },
+    ];
+
+    window.jsPDF = window.jspdf.jsPDF;
+
+    $(() => {
+      const dataGrid = $("#tablecontent").dxDataGrid({
+        dataSource: data,
+        showColumnLines: true,
+        showRowLines: true,
+        rowAlternationEnabled: true,
+        showBorders: true,
+        keyExpr: "ID",
+        columnsAutoWidth: true,
+        headerFilter: { visible: true },
+        showBorders: true,
+        filterRow: {
+          visible: true,
+          applyFilter: "auto",
+        },
+
+        columnChooser: {
+          enabled: true,
+          mode: "select",
+        },
+
+        export: {
+          enabled: true,
+          formats: ["pdf"],
+          // allowExportSelectedData: true,
+        },
+
+        searchPanel: {
+          visible: true,
+          // with: 700,
+          // position: left,
+        },
+
+        pager: {
+          visible: true,
+          pageSize: 1,
+          allowedPageSizes: ["10", "20", "all"],
+          infoText: "Page {0} of  {1} [ Total {2} items ]",
+          showPageSizeSelector: true,
+          showInfo: true,
+          showNavigationButtons: true,
+        },
+
+        editing: {
+          // allowEditing:true,
+          allowUpdating: true,
+          allowAdding: true,
+          allowDeleting: true,
+          useIcons: true,
+          mode: "form", // 'batch' | 'cell' | 'form' | 'popup'
+        },
+
+        columns: [
+          { dataField: "FirstName", allowEditing: false },
+          { dataField: "MiddleName" },
+          { dataField: "LastName" },
+          { dataField: "PhoneNumber" },
+          { dataField: "Email" },
+        ],
+
+        onInitNewRow: function (e) {},
+
+        onEditingStart: function () {},
+
+        onExporting(e) {
+          const doc = new jsPDF();
+          DevExpress.pdfExporter
+            .exportDataGrid({
+              margin: { top: 50, right: 10, bottom: 10, left: 10 },
+              jsPDFDocument: doc,
+              component: e.component,
+              // indent: 5,
+            })
+            .then(() => {
+              const header =
+                "WAKALA WA USAJILI MATUKIO YA KIJAMII ZANZIBAR (ZCSRA)";
+              const subheader = "STAFF MANAGEMENT REPORT";
+              const pageWidth = doc.internal.pageSize.getWidth();
+              const pageHeight = doc.internal.pageSize.getHeight();
+
+              doc.addImage("../images/crvs-image.png", 15, 15, 30, 30);
+              doc.addImage(
+                "../images/crvs-image.png",
+                pageWidth - 40,
+                15,
+                30,
+                30
+              );
+
+              doc.text(header, pageWidth / 2, 23, {
+                align: "center",
+                maxWidth: 120,
+                color: "#075985",
+              });
+
+              doc.setFontSize(14);
+              doc.text(subheader, pageWidth / 2, 40, {
+                align: "center",
+                font: 10,
+                maxWidth: 120,
+                color: "#075985",
+              });
+              doc.text(
+                new Date().toISOString("yyyy-mm-dd").substring(0, 10),
+                pageWidth - 15,
+                pageHeight - 5,
+                { align: "right" }
+              );
+            })
+            .then(() => {
+              doc.save("Staff Management Report.pdf");
+            });
+        },
+      });
+    });
+  </script>
+
+  <div
+    class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="searchPerson"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl pointer-events-none relative w-auto">
+      <div
+        class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+      >
+        <div
+          class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+        >
+          <h5
+            class="text-xl font-medium uppercase leading-normal text-gray-800"
+            id="exampleModalLabel"
+          >
+            Search Person
+          </h5>
+        </div>
+        <form>
+          <div class="modal-body relative p-4">
+            <div class="grid grid-cols-2 gap-2 py-4 px-6">
+              <div class="flex flex-col">
+                <label class="font-medium uppercase">pin:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Pin"
+                  type="text"
+                />
+              </div>
+
+              <div class="flex flex-col">
+                <label class="font-medium uppercase">First name:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="First Name"
+                  type="text"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">ZanID:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="ZanID"
+                  type="text"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">Middle Name:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Middel Name"
+                  type="text"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">NationalID:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Zan ID No"
+                  type="number"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">last name:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Zan ID No"
+                  type="number"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">Passport:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Zan ID No"
+                  type="number"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">Date of birth:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Zan ID No"
+                  type="date"
+                />
+              </div>
+              <div class="flex flex-col space-y-2">
+                <label class="font-medium uppercase">Resident Permit ID:</label>
+                <input
+                  class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
+                  placeholder="Zan ID No"
+                  type="number"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end space-x-3 rounded-b-md border-t border-gray-200 p-4 px-4"
+          >
+            <button
+              type="button"
+              class="rounded-md bg-crvsgreen-300 px-5 py-2.5 text-sm font-medium text-crvsgreen-900 hover:bg-crvsgreen-800 hover:text-white"
+            >
+              Search
+            </button>
+
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="rounded-md bg-red-300 px-5 py-2.5 text-sm font-medium text-red-900 hover:bg-red-800 hover:text-white"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</html>

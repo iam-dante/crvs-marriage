@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.required:after {
+  content: "*";
+  color: red;
+}
+
+.stepper-active .stepper-head-text{
+    @apply font-bold
+}
+
+.stepper-active {
+    @apply border-b-4 border-crvsblue-800 
+}
+
+
+.stepper-head{
+  @apply hover:bg-sky-100
+}
+
+.heightstepper{
+  @apply min-h-screen !important
+}
