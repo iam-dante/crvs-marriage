@@ -376,11 +376,25 @@
                 </div>
 
                 <div class="flex flex-col space-y-2">
-                  <label class="font-medium uppercase">Request Date:</label>
+                  <label class="font-medium uppercase">Book Status:</label>
+                  <select
+                    class="mt-2 h-12 w-full rounded-md border-2 bg-white px-2 focus:outline-crvsblue-700"
+                  >
+                    <option>Select User type</option>
+                    <option>New</option>
+                    <option>Damaged</option>
+                    <option>Loss</option>
+
+
+                  </select>
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                  <label class="font-medium uppercase">Book Number:</label>
                   <input
                     class="mt-2 h-12 w-full rounded-md border-2 border-slate-300 px-2 focus:outline-crvsblue-700"
-                    
-                    type="date"
+                    placeholder="Book Number"
+                    type="number"
                   />
                 </div>
 
