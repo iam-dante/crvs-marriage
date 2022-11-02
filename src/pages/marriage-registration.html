@@ -1053,208 +1053,6 @@
 
                       <button
                         type="button"
-                        id="regNext"
-                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
-                      >
-                        <h class="font-bold">next</h>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-5 w-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </li>
-
-              <!-- registrar  infromation -->
-              <li id="regId" class="stepper-step">
-                <button class="stepper-head w-full" disabled>
-                  <span class="stepper-head-icon"> 3 </span>
-                  <span class="stepper-head-text text-xl uppercase"
-                    >registrar details</span
-                  >
-                </button>
-                <div id="regDiv" class="stepper-content space-y-8">
-                  <form class="space-y-8">
-                    <div class="space-y-4">
-                      <div class="border-b-2 border-crvsblue-700 py-2 px-4">
-                        <h class="text-xl font-semibold uppercase"
-                          >registrar information</h
-                        >
-                      </div>
-
-                      <div
-                        class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
-                      >
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            Registrar ID type:</span
-                          >
-                          <select
-                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
-                          ></select>
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
-                            ID Number</span
-                          >
-
-                          <input
-                            type="text"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="ID Number"
-                          />
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
-                            First Name</span
-                          >
-
-                          <input
-                            type="text"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="First Name"
-                          />
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la kati /</span> -->
-                            Middle Name</span
-                          >
-                          <input
-                            type="text"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="Middle Name"
-                          />
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
-                            SurName</span
-                          >
-                          <input
-                            type="text"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="SurName"
-                          />
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
-                            District of democile</span
-                          >
-                          <select
-                            type="date"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
-                          ></select>
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium"> Jinsia /</span> -->
-                            Gender</span
-                          >
-
-                          <div class="mt-3 flex flex-row space-x-6">
-                            <div class="flex flex-col items-center">
-                              <input type="radio" class="h-4 w-4" />
-                              <span class="block text-base font-light">
-                                <!-- <span class="font-medium">Mume /</span> -->
-                                Male</span
-                              >
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                              <input type="radio" class="h-4 w-4" />
-                              <span class="block text-base font-light">
-                                <!-- <span class="font-medium">Mke /</span> -->
-                                Female</span
-                              >
-                            </div>
-                          </div>
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
-                            Ward of democile</span
-                          >
-                          <select
-                            type="date"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
-                          ></select>
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
-                            Address:</span
-                          >
-
-                          <input
-                            type="number"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="Phone Number"
-                          />
-                        </label>
-
-                        <label class="block w-full">
-                          <span class="block text-base font-light">
-                            <!-- <span class="font-medium">Jina la Ukoo /</span> -->
-                            The title of registrar/Rank:</span
-                          >
-                          <select
-                            type="date"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
-                          ></select>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="flex h-20 w-full justify-between">
-                      <button
-                        type="button"
-                        id="prevBride"
-                        class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-5 w-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        <h class="font-bold">prev</h>
-                      </button>
-
-                      <button
-                        type="button"
                         id="witNext"
                         class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
                       >
@@ -1281,6 +1079,8 @@
                   </form>
                 </div>
               </li>
+
+              
 
               <!-- witnessinfromation -->
               <li id="witId" class="stepper-step">
@@ -1598,7 +1398,7 @@
                     <div class="flex h-20 w-full justify-between">
                       <button
                         type="button"
-                        id="prevReg"
+                        id="prevBride"
                         class="flex h-12 items-center space-x-3 rounded bg-crvsgreen-800 px-4 font-semibold uppercase text-white hover:border hover:border-crvsgreen-800 hover:bg-white hover:text-crvsgreen-800"
                       >
                         <svg
