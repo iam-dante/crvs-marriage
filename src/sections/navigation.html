@@ -128,6 +128,110 @@
           </a> -->
         </div>
       </details>
+
+      <details
+        class="divorced-toggle group flex w-full cursor-pointer items-center rounded-md px-1 py-2 text-sm font-bold text-white hover:text-white"
+      >
+        <summary class="relative flex items-center">
+          <svg
+            class="mr-4 h-6 w-6 flex-shrink-0"
+            viewBox="0 0 31 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 14C13.5899 14 16.5 11.0899 16.5 7.5C16.5 3.91015 13.5899 1 10 1C6.41015 1 3.5 3.91015 3.5 7.5C3.5 11.0899 6.41015 14 10 14Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M18.425 1.2375C18.9996 1.08166 19.5922 1.00181 20.1875 1C21.9115 1 23.5648 1.68482 24.7837 2.90381C26.0027 4.12279 26.6875 5.77609 26.6875 7.5C26.6875 9.22391 26.0027 10.8772 24.7837 12.0962C23.5648 13.3152 21.9115 14 20.1875 14"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1 18.675C2.01493 17.2307 3.36255 16.0519 4.92901 15.2381C6.49547 14.4243 8.23477 13.9995 10 13.9995C11.7652 13.9995 13.5045 14.4243 15.071 15.2381C16.6375 16.0519 17.9851 17.2307 19 18.675"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M20.1875 14C21.9529 13.9989 23.6925 14.4232 25.2592 15.237C26.8258 16.0508 28.1733 17.2301 29.1875 18.675"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <h>Divorced Registration</h>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute right-0 h-4 w-4 group-open:-rotate-180 group-open:transform group-open:transition group-open:duration-500 group-open:ease-in-out"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </summary>
+
+        <div class="mt-2 space-y-2 border-l-2 border-white pl-6">
+          <a
+            href="./divorced.html"
+            class="divorcedRegistration group flex items-center rounded-md px-2 py-2 text-sm font-bold leading-6 text-white hover:bg-crvsblue-900"
+            aria-current="page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-4 h-6 w-6 flex-shrink-0"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Registration
+          </a>
+
+          <!-- <a
+            href="./marriage-assessment.html"
+            class="marriageAssessment group flex items-center rounded-md px-2 py-2 text-sm font-bold leading-6 text-white hover:bg-crvsblue-900"
+            aria-current="page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-4 h-6 w-6 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Assessment
+          </a> -->
+        </div>
+      </details>
     </div>
   </nav>
 
@@ -178,19 +282,15 @@
         $(".staff").addClass("bg-crvsblue-900");
       } else if (pageURL.includes("/pages/bookordering.html")) {
         $(".bookOrdering").addClass("bg-crvsblue-900 ");
-      } else if (pageURL.includes("/pages/permissions.html")) {
-        sectionDetails("perm-details");
-        userManagementDetails();
-
-        $(".permission").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/marriage.html")) {
+      } 
+      else if (pageURL.includes("/pages/marriage.html")) {
         sectionDetails("marriage-toggle");
 
         $(".marriageRegistration").addClass("bg-crvsblue-900");
-      } else if (pageURL.includes("/pages/marriage-assessment.html")) {
-        sectionDetails("marriage-toggle");
+      } else if (pageURL.includes("/pages/divorced.html")) {
+        sectionDetails("divorced-toggle");
 
-        $(".marriageAssessment").addClass("bg-crvsblue-900");
+        $(".divorcedRegistration").addClass("bg-crvsblue-900");
       }
     });
   </script>
