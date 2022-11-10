@@ -121,12 +121,20 @@
                 >
 
                 <!-- data-modal-toggle="newStaff" -->
-                <a
+
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#eventModel"
+                  class="absolute right-10 rounded border border-crvsgreen-900 bg-transparent py-2 px-4 font-semibold uppercase text-crvsgreen-700 hover:border-transparent hover:bg-crvsgreen-900 hover:text-white"
+                >
+                  add event
+                </button>
+                <!-- <a
                   href="./divorced-registration.html"
                   class="absolute right-10 rounded border border-crvsgreen-900 bg-transparent py-2 px-4 font-semibold uppercase text-crvsgreen-700 hover:border-transparent hover:bg-crvsgreen-900 hover:text-white"
                 >
                   add event
-                </a>
+                </a> -->
               </div>
             </div>
 
@@ -772,4 +780,69 @@
     <!-- modal-tailwindcss cnd script -->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   </body>
+
+  <div
+    class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="eventModel"
+    tabindex="-1"
+    aria-labelledby="eventModel"
+    aria-modal="true"
+    role="dialog"
+  >
+    <div class="modal-dialog modal-lg pointer-events-none relative w-auto">
+      <div
+        class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+      >
+        <div
+          class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+        >
+          <h5
+            class="text-xl font-medium uppercase leading-normal text-gray-800"
+          >
+            Please Enter Marriage Event Number
+          </h5>
+          <button
+            type="button"
+            class="btn-close box-content h-4 w-4 rounded-none border-none p-1 text-black opacity-50 hover:text-black hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body relative p-4">
+          <form>
+            <div class="space-y-4 px-6">
+              <div class="flex flex-col">
+                <label class="font-medium uppercase">Event Number</label>
+                <input
+                  class="h-12 px-2 mt-2 w-full border-2 border-slate-300 rounded-md focus:outline-crvsblue-700 Eventnumber"
+                  id="Eventnumber"
+                  placeholder="Event Number"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="flex w-full items-center justify-end space-x-3 px-4 py-4"
+            >
+              <button
+                type="button"
+                class="rounded-md bg-green-300 px-5 py-2.5 text-sm font-medium text-green-900 hover:text-white hover:bg-crvsgreen-900 btndecision"
+                id="btncomment"
+              >
+                Submit
+              </button>
+
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                class="rounded-md bg-red-300 px-5 py-2.5 text-sm font-medium text-red-900 hover:bg-red-800 hover:text-white"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>
