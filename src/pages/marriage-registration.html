@@ -17,7 +17,7 @@
     />
 
     <link href="../dist/tailwindcss.css" rel="stylesheet" />
-    <title> Marriage Registration</title>
+    <title>Marriage Registration</title>
     <link rel="icon" type="image/x-icon" href="../images/crvs-image.png" />
   </head>
   <body>
@@ -112,10 +112,20 @@
 
                 <div id="groomDiv" class="stepper-content space-y-8">
                   <div class="space-y-4">
-                    <div class="border-b-2 border-crvsblue-700 py-2 px-4">
+                    <div
+                      class="relative border-b-2 border-crvsblue-700 py-2 px-4"
+                    >
                       <h class="text-xl font-semibold uppercase"
                         >Groom information</h
                       >
+                      <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#motherSearch"
+                        class="absolute right-10 bottom-2 rounded border border-crvsgreen-900 py-2 px-2 font-semibold uppercase hover:bg-transparent hover:text-crvsgreen-900 text-white bg-crvsgreen-900"
+                      >
+                        search
+                      </button>
                     </div>
 
                     <form class="space-y-8">
@@ -1080,8 +1090,6 @@
                 </div>
               </li>
 
-              
-
               <!-- witnessinfromation -->
               <li id="witId" class="stepper-step">
                 <button class="stepper-head w-full" disabled>
@@ -1319,30 +1327,29 @@
                         <div
                           class="grid gap-8 px-6 md:grid-cols-3 lg:grid-cols-4"
                         >
+                          <label class="block w-full">
+                            <span class="block text-base font-light"
+                              >ID Type:</span
+                            >
+                            <select
+                              class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                            >
+                              <option>Select type of ID</option>
+                            </select>
+                          </label>
 
-                        <label class="block w-full">
-                          <span class="block text-base font-light"
-                            >ID Type:</span
-                          >
-                          <select
-                            class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
-                          >
-                            <option>Select type of ID</option>
-                          </select>
-                        </label>
+                          <label class="block w-full">
+                            <span class="block text-base font-light">
+                              <!-- <span class="font-medium">Jina la kwanza /</span> -->
+                              ID Number</span
+                            >
 
-                        <label class="block w-full">
-                          <span class="  block text-base font-light">
-                            <!-- <span class="font-medium">Jina la kwanza /</span> -->
-                            ID Number</span
-                          >
-
-                          <input
-                            type="number"
-                            class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
-                            placeholder="Id number"
-                          />
-                        </label>
+                            <input
+                              type="number"
+                              class="mt-1 h-10 w-full rounded border border-slate-400 px-4 focus:outline-crvsblue-700"
+                              placeholder="Id number"
+                            />
+                          </label>
                           <label class="block w-full">
                             <span class="block text-base font-light">
                               <!-- <span class="font-medium">Jina la kwanza /</span> -->
@@ -1813,6 +1820,157 @@
             </button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="motherSearch"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl pointer-events-none relative w-auto">
+      <div
+        class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+      >
+        <div
+          class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+        >
+          <h5
+            class="text-xl font-medium uppercase leading-normal text-gray-800"
+            id="exampleModalLabel"
+          >
+            Search
+          </h5>
+        </div>
+        <div class="modal-body relative p-4">
+          <form>
+            <div class="grid grid-cols-3 gap-4 py-4 px-6">
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">First Name:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="First Name"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Middle Name:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="Middle Name"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Last Name:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="Last Name"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">PIN:</span>
+                </span>
+                <input
+                  type="number"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Zan ID:</span>
+                </span>
+                <input
+                  type="number"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">National ID:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="National ID"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Passport ID:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="Passport ID"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Resident Permit ID:</span>
+                </span>
+                <input
+                  type="number"
+                  placeholder="Resident Permit ID"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+              <label class="block">
+                <span class="block text-base font-light">
+                  <span class="font-medium">Birth Date:</span>
+                </span>
+                <input
+                  type="date"
+                  class="mt-1 h-10 w-full rounded border border-slate-400 bg-white px-4 focus:outline-crvsblue-700"
+                />
+              </label>
+            </div>
+          </form>
+
+          <!-- The data table -->
+          <div class="max-h-96"></div>
+        </div>
+        <div
+          class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end space-x-3 rounded-b-md border-t border-gray-200 p-4 px-4"
+        >
+          <button
+            type="button"
+            class="rounded-md border border-crvsgreen-900 px-5 py-2.5 text-sm font-medium text-crvsgreen-900 hover:bg-crvsgreen-800 hover:text-white"
+          >
+            Search
+          </button>
+          <button
+            type="button"
+            class="rounded-md bg-crvsgreen-300 px-5 py-2.5 text-sm font-medium text-crvsgreen-900 hover:bg-crvsgreen-800 hover:text-white"
+          >
+            Search From Zan ID
+          </button>
+
+          <button
+            type="button"
+            data-bs-dismiss="modal"
+            class="rounded-md bg-red-300 px-5 py-2.5 text-sm font-medium text-red-900 hover:bg-red-800 hover:text-white"
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   </div>
