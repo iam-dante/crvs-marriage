@@ -1618,6 +1618,13 @@ video {
   min-height: 100vh !important;
 }
 
+.dx-datagrid-text-content{
+  font-family: Roboto Mono, monospace;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .hover\:border:hover{
   border-width: 1px;
 }
