@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwindcss elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <link href="../dist/tailwindcss.css" rel="stylesheet" />
+    <title>CRVS</title>
+    <link rel="icon" type="image/x-icon" href="../images/crvs-image.png" />
+  </head>
+  <body>
+    <div
+      class="min-h-full scrollbar scrollbar-track-gray-100 scrollbar-thumb-gray-900"
+    >
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div
+        id="sidebar"
+        class="fixed inset-0 z-40 flex hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-600 bg-opacity-75"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="relative flex w-full max-w-xs flex-1 flex-col bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button
+              id="close_sidebar"
+              type="button"
+              class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- <div class="flex-shrink-0 flex items-center px-4"></div> -->
+
+          <!--nav bar place-->
+          <section include="navigation.html"></section>
+        </div>
+
+        <div class="w-14 flex-shrink-0" aria-hidden="true">
+          <!-- Dummy element to force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+
+        <div
+          class="flex flex-grow flex-col overflow-y-auto bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div
+            class="flex w-full flex-shrink-0 flex-row items-center justify-center space-x-3 px-4"
+          >
+            <image src="../images/crvs-image.png" class="h-10 w-16" />
+            <h class="text-2xl font-bold tracking-widest text-white">CRVS</h>
+          </div>
+
+          <!-- navigation section -->
+          <section include="navigation.html"></section>
+        </div>
+      </div>
+
+      <div class="flex flex-1 flex-col lg:pl-64">
+        <main class="relative min-h-screen flex-1 pb-8">
+          <!-- Page header -->
+          <section include="header.html"></section>
+
+          <div class="mt-8">
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+              <div
+                class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5"
+              >
+                <!-- Cardh -->
+
+                <div class="overflow-hidden rounded-lg bg-white shadow">
+                  <div class="p-5">
+                    <div class="flex items-center">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/scale -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6 text-gray-500"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="ml-5 w-0 flex-1">
+                        <dl>
+                          <dt class="truncate font-bold text-gray-500">
+                            Marriage
+                          </dt>
+                          <dd>
+                            <div class="text-xl font-bold text-gray-900">
+                              300,659
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-orange-200 px-5 py-3"></div>
+                </div>
+
+                <div class="overflow-hidden rounded-lg bg-white shadow">
+                  <div class="p-5">
+                    <div class="flex items-center">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/scale -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6 text-gray-500"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="ml-5 w-0 flex-1">
+                        <dl>
+                          <dt class="truncate font-bold text-gray-500">
+                            Divorced
+                          </dt>
+                          <dd>
+                            <div class="text-xl font-bold text-gray-900">
+                              400,659
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-orange-500 px-5 py-3"></div>
+                </div>
+
+                <div class="overflow-hidden rounded-lg bg-white shadow">
+                  <div class="p-5">
+                    <div class="flex items-center">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/scale -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6 text-gray-500"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="ml-5 w-0 flex-1">
+                        <dl>
+                          <dt class="truncate font-bold text-gray-500">
+                            Book Ordering
+                          </dt>
+                          <dd>
+                            <div class="text-xl font-bold text-gray-900">
+                              400,659
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-purple-300 px-5 py-3"></div>
+                </div>
+
+                <!-- More items... -->
+              </div>
+            </div>
+
+            <canvas id="lineGraph" height="90" class="mt-6 px-8 py-4"></canvas>
+
+            <div
+              class="mx-auto grid max-w-full grid-cols-1 gap-4 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-1 lg:px-8"
+            >
+              <div height="90" id="barMulti"></div>
+
+              <!-- <div class="w-full space-y-6">
+                <h class="text-xl font-bold uppercase">Births registrations</h>
+                <canvas id="birthChart"></canvas>
+              </div>
+
+              <div class="w-full space-y-6">
+                <h class="text-xl font-bold uppercase">Deaths registrations</h>
+                <canvas id="deathChart"></canvas>
+              </div>
+
+              <div class="w-full space-y-6">
+                <h class="text-xl font-bold uppercase"
+                  >Marriage registrations</h
+                >
+                <canvas id="marriageChart"></canvas>
+              </div>
+
+              <div class="w-full space-y-6">
+                <h class="text-xl font-bold uppercase">Divorce registrations</h>
+                <canvas id="divorceChart"></canvas>
+              </div>
+
+              <div class="w-full space-y-6">
+                <h class="text-xl font-bold uppercase"
+                  >Adaption registrations</h
+                >
+                <canvas id="adaptionChart"></canvas>
+              </div> -->
+
+              <!-- <div id="sample"></div> -->
+            </div>
+          </div>
+
+          <div id="sampleTable" height="90" class="mt-6 px-8 py-4"></div>
+
+          <section include="footer.html"></section>
+        </main>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="../js/buttonControls.js"
+      type="text/javascript"
+      charset="utf8"
+    ></script>
+
+    <script src="../js/section.js"></script>
+
+    <!-- scripts for sections -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn3.devexpress.com/jslib/21.2.7/css/dx.light.css"
+    />
+
+    <!-- DevExtreme library -->
+    <script
+      type="text/javascript"
+      src="https://cdn3.devexpress.com/jslib/21.2.7/js/dx.all.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+    <!-- toast message cdns -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script
+    src="../js/buttonControls.js"
+    type="text/javascript"
+    charset="utf8"
+  ></script>
+
+  <!-- Line Chart.js -->
+  <script>
+    // const labels = ["Male", "Female"];
+
+    // const data = {
+    //   labels: labels,
+    //   datasets: [
+    //     {
+    //       label: "Birth Registration",
+    //       backgroundColor: ["#075985", "#38bdf8"],
+    //       borderColor: "#EBF2FA",
+    //       data: [109, 229],
+    //     },
+    //   ],
+    // };
+    // const deathData = {
+    //   labels: labels,
+    //   datasets: [
+    //     {
+    //       label: "Death Registration",
+    //       backgroundColor: ["#D44D5C", "#fca5a5"],
+    //       borderColor: "#EBF2FA",
+    //       data: [109, 500],
+    //     },
+    //   ],
+    // };
+
+    // const marriageData = {
+    //   labels: labels,
+    //   datasets: [
+    //     {
+    //       label: "Marriage Registration",
+    //       backgroundColor: ["#a16207", "#fed7aa"],
+    //       borderColor: "#EBF2FA",
+    //       data: [109, 500],
+    //     },
+    //   ],
+    // };
+
+    // const divorceData = {
+    //   labels: labels,
+    //   datasets: [
+    //     {
+    //       label: "Divorce Registration",
+    //       backgroundColor: ["#ea580c", "#fcd34d"],
+    //       borderColor: "#EBF2FA",
+    //       data: [109, 500],
+    //     },
+    //   ],
+    // };
+
+    // const adaptionData = {
+    //   labels: labels,
+    //   datasets: [
+    //     {
+    //       label: " Adaption Registration",
+    //       backgroundColor: ["#4f46e5", "#c4b5fd"],
+    //       borderColor: "#EBF2FA",
+    //       data: [109, 500],
+    //     },
+    //   ],
+    // };
+
+    // const birthConfig = {
+    //   type: "doughnut",
+    //   data: data,
+    //   options: {},
+    // };
+
+    // const deathConfig = {
+    //   type: "doughnut",
+    //   data: deathData,
+    //   options: {},
+    // };
+
+    // const marriageConfig = {
+    //   type: "doughnut",
+    //   data: marriageData,
+    //   options: {},
+    // };
+
+    // const divorceConfig = {
+    //   type: "doughnut",
+    //   data: divorceData,
+    //   options: {},
+    // };
+
+    // const adaptionConfig = {
+    //   type: "doughnut",
+    //   data: adaptionData,
+    //   options: {},
+    // };
+
+    // const birthChart = new Chart(
+    //   document.getElementById("birthChart"),
+    //   birthConfig
+    // );
+    // const deathChart = new Chart(
+    //   document.getElementById("deathChart"),
+    //   deathConfig
+    // );
+    // const marrigeChart = new Chart(
+    //   document.getElementById("marriageChart"),
+    //   marriageConfig
+    // );
+    // const divorceChart = new Chart(
+    //   document.getElementById("divorceChart"),
+    //   divorceConfig
+    // );
+    // const adaptionChart = new Chart(
+    //   document.getElementById("adaptionChart"),
+    //   adaptionConfig
+    // );
+
+    // Line Graph
+    const _labels = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    function getRandomNumbers() {
+      // Create an empty array to store the random numbers
+      const numbers = [];
+
+      // Generate 12 random numbers and add them to the array
+      for (let i = 0; i < 12; i++) {
+        numbers.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100);
+      }
+
+      return numbers;
+    }
+
+    const _data = {
+      labels: _labels,
+      datasets: [
+        {
+          label: "Marriage",
+          data: getRandomNumbers(),
+        },
+        {
+          label: "Divorce",
+          data: getRandomNumbers(),
+        },
+        {
+          label: "Book Ordering",
+          data: getRandomNumbers(),
+        },
+      ],
+    };
+
+    const _config = {
+      type: "line",
+      data: _data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+          },
+        },
+      },
+    };
+
+    const lineGraph = new Chart(document.getElementById("lineGraph"), _config);
+  </script>
+
+  <!-- Bar Multi -->
+  <script>
+    $(() => {
+      $("#barMulti").dxChart({
+        dataSource: dataSource_,
+        commonSeriesSettings: {
+          argumentField: "state",
+          type: "bar",
+          hoverMode: "allArgumentPoints",
+          selectionMode: "allArgumentPoints",
+          label: {
+            visible: true,
+            format: {
+              type: "fixedPoint",
+              precision: 0,
+            },
+          },
+        },
+        series: [
+         
+          { valueField: "book_ordering", name: "Book Ordering" },
+          { valueField: "divorce", name: "Divorce" },
+          { valueField: "marriage", name: "Marriage" },
+        ],
+        title: "Revenue of the Registrations",
+        legend: {
+          verticalAlignment: "bottom",
+          horizontalAlignment: "center",
+        },
+        export: {
+          enabled: true,
+        },
+        onPointClick(e) {
+          e.target.select();
+        },
+      });
+    });
+
+    const dataSource_ = [
+      {
+        state: "January",
+
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "Febuary",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "March",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "April",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "May",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "June",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "July",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "August",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "September",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "October",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "November",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+      {
+        state: "December",
+        book_ordering: 400,
+        divorce: 200,
+        marriage: 100,
+      },
+    ];
+  </script>
+</html>
